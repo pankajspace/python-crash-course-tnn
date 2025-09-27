@@ -120,91 +120,100 @@
 # print(type(z)) # shows <class 'float'>
 
 # explicit conversion
-a = 10 # integer
-b = 3.14 # float
-c = "42" # string
-d = "3.14" # string
-e = "Hello" # string
-f = int(c) # explicit conversion from string to integer
-g = float(d) # explicit conversion from string to float
-print(f) # shows 42
-print(g) # shows 3.14
-print(type(f)) # shows <class 'int'>
-print(type(g)) # shows <class 'float'>
+input_integer = 10 # integer
+input_float = 3.14 # float
+input_string = "42" # string
+input_string2 = "3.14" # string
+input_string3 = "Hello" # string
+input_integer2 = int(input_string) # explicit conversion from string to integer
+input_float2 = float(input_string2) # explicit conversion from string to float
+print(input_integer2) # shows 42
+print(input_float2) # shows 3.14
+print(type(input_integer2)) # shows <class 'int'>
+print(type(input_float2)) # shows <class 'float'>
 
 # converting float to int (truncates decimal part)
-h = int(b) # explicit conversion from float to integer
-print(h) # shows 3
-print(type(h)) # shows <class 'int'>
+input_integer3 = int(input_float) # explicit conversion from float to integer
+print(input_integer3) # shows 3
+print(type(input_integer3)) # shows <class 'int'>
 
 # converting int to float
-i = float(a) # explicit conversion from integer to float
-print(i) # shows 10.0
-print(type(i)) # shows <class 'float'>
+input_float3 = float(input_integer) # explicit conversion from integer to float
+print(input_float3) # shows 10.0
+print(type(input_float3)) # shows <class 'float'>
 
 # converting int to string
-j = str(a) # explicit conversion from integer to string
-print(j) # shows "10"
-print(type(j)) # shows <class 'str'>
+input_string4 = str(input_integer) # explicit conversion from integer to string
+print(input_string4) # shows "10"
+print(type(input_string4)) # shows <class 'str'>
 
 # converting float to string
-k = str(b) # explicit conversion from float to string
-print(k) # shows "3.14"
-print(type(k)) # shows <class 'str'>
+input_string5 = str(input_float) # explicit conversion from float to string
+print(input_string5) # shows "3.14"
+print(type(input_string5)) # shows <class 'str'>
 
 # converting boolean to int
-l = int(True) # True becomes 1
-m = int(False) # False becomes 0
-print(l) # shows 1
-print(m) # shows 0
-print(type(l)) # shows <class 'int'>
-print(type(m)) # shows <class 'int'>
+input_integer4 = int(True) # True becomes 1
+input_integer5 = int(False) # False becomes 0
+print(input_integer4) # shows 1
+print(input_integer5) # shows 0
+print(type(input_integer4)) # shows <class 'int'>
+print(type(input_integer5)) # shows <class 'int'>
 
 # converting boolean to float
-n = float(True) # True becomes 1.0
-o = float(False) # False becomes 0.0
-print(n) # shows 1.0
-print(o) # shows 0.0
-print(type(n)) # shows <class 'float'>
-print(type(o)) # shows <class 'float'>
+input_float4 = float(True) # True becomes 1.0
+input_float5 = float(False) # False becomes 0.0
+print(input_float4) # shows 1.0
+print(input_float5) # shows 0.0
+print(type(input_float4)) # shows <class 'float'>
+print(type(input_float5)) # shows <class 'float'>
 
 # converting boolean to string
-p = str(True) # True becomes "True"
-q = str(False) # False becomes "False"
-print(p) # shows "True"
-print(q) # shows "False"
-print(type(p)) # shows <class 'str'>
-print(type(q)) # shows <class 'str'>
+input_string6 = str(True) # True becomes "True"
+input_string7 = str(False) # False becomes "False"
+print(input_string6) # shows "True"
+print(input_string7) # shows "False"
+print(type(input_string6)) # shows <class 'str'>
+print(type(input_string7)) # shows <class 'str'>
 
 # converting string to boolean
-r = bool("Hello") # non-empty string becomes True
-s = bool("") # empty string becomes False
-print(r) # shows True
-print(s) # shows False
-print(type(r)) # shows <class 'bool'>
-print(type(s)) # shows <class 'bool'>
+input_boolean1 = bool("Hello") # non-empty string becomes True
+input_boolean2 = bool("") # empty string becomes False
+print(input_boolean1) # shows True
+print(input_boolean2) # shows False
+print(type(input_boolean1)) # shows <class 'bool'>
+print(type(input_boolean2)) # shows <class 'bool'>
 
 # converting int to boolean
-t = bool(1) # non-zero integer becomes True
-u = bool(0) # zero becomes False
-print(t) # shows True
-print(u) # shows False
-print(type(t)) # shows <class 'bool'>
-print(type(u)) # shows <class 'bool'>
+input_boolean3 = bool(1) # non-zero integer becomes True
+input_boolean4 = bool(0) # zero becomes False
+print(input_boolean3) # shows True
+print(input_boolean4) # shows False
+print(type(input_boolean3)) # shows <class 'bool'>
+print(type(input_boolean4)) # shows <class 'bool'>
 
 # converting float to boolean
-v = bool(0.1) # non-zero float becomes True
-w = bool(0.0) # zero becomes False
-print(v) # shows True
-print(w) # shows False
-print(type(v)) # shows <class 'bool'>
-print(type(w)) # shows <class 'bool'>
+input_boolean5 = bool(0.1) # non-zero float becomes True
+input_boolean6 = bool(0.0) # zero becomes False
+print(input_boolean5) # shows True
+print(input_boolean6) # shows False
+print(type(input_boolean5)) # shows <class 'bool'>
+print(type(input_boolean6)) # shows <class 'bool'>
 
 # invalid conversions (uncommenting these will cause errors)
-# x = int("Hello") # cannot convert non-numeric string to int
-# y = float("World") # cannot convert non-numeric string to float
-# z = int("3.14") # cannot convert float string directly to int
-# print(x)
-# print(y)
-# print(z)
+# input_integer6 = int("Hello") # cannot convert non-numeric string to int
+# input_float7 = float("World") # cannot convert non-numeric string to float
+# input_integer7 = int("3.14") # cannot convert float string directly to int
+# print(input_integer6)
+# print(input_float7)
+# print(input_integer7)
+
+# input from user
+name = input("Enter your name: ") # input is always a string
+age = int(input("Enter your age: ")) # convert input to integer
+print(name, age)
+print("Hello " + name + ", you are " + str(age) + " years old.")
+print(f"Hello {name}, you are {age} years old.") # using f-string
+print("Next year, you will be " + str(age + 1) + " years old.")
+print(f"Next year, you will be {age + 1} years old.") # using f-string
 
