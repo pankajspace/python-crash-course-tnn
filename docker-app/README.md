@@ -1,8 +1,8 @@
 ### Build image
-docker build -t python-docker-app .
+docker build -t docker-app .
 
 ### Run container
-docker run -p 5000:5000 python-docker-app
+docker run -p 5000:5000 docker-app
 
 ### Access the app
 ```
