@@ -17,12 +17,13 @@ Before you start, make sure you have installed:
 - **macOS**: Download Docker Desktop
 - **Windows**: Download Docker Desktop
 
-### Make (Optional but Recommended)
-- **Fedora**: `sudo dnf install make`
-- **Ubuntu/Debian**: `sudo apt install make`
-- **CentOS/RHEL**: `sudo yum install make`
-- **macOS**: Comes with Xcode Command Line Tools (`xcode-select --install`)
-- **Windows**: Use WSL2 or install via Chocolatey (`choco install make`)
+### Node.js & npm (For Task Management)
+- **Node.js**: [Install Node.js](https://nodejs.org/) (includes npm)
+- **Fedora**: `sudo dnf install nodejs npm`
+- **Ubuntu/Debian**: `sudo apt install nodejs npm`
+- **CentOS/RHEL**: `sudo yum install nodejs npm`
+- **macOS**: Download from nodejs.org or use Homebrew (`brew install node`)
+- **Windows**: Download from nodejs.org
 
 ### Start Docker Service (Linux only)
 ```bash
@@ -41,19 +42,24 @@ sudo usermod -aG docker $USER
 cd /path/to/python-crash-course-tnn/docker-app
 ```
 
-### 2. Build the Docker Environment
+### 2. Install npm Dependencies (One-time setup)
 ```bash
-# Using Make (recommended)
-make build
+npm install
+```
+
+### 3. Build the Docker Environment
+```bash
+# Using npm scripts (recommended)
+npm run build
 
 # OR using Docker Compose directly
 docker-compose build
 ```
 
-### 3. Run the Application
+### 4. Run the Application
 ```bash
-# Using Make
-make run
+# Using npm scripts
+npm start
 
 # OR using Docker Compose directly
 docker-compose up app
@@ -61,7 +67,7 @@ docker-compose up app
 
 **🌐 Access your app at:** http://localhost:5000
 
-### 4. Stop the Application
+### 5. Stop the Application
 ```bash
 # Press Ctrl+C in the terminal, or in another terminal:
 docker-compose down
@@ -71,16 +77,16 @@ docker-compose down
 
 ### Adding New Libraries
 
-#### Method 1: Using Make Commands (Easiest)
+#### Method 1: Using npm Scripts (Easiest)
 ```bash
 # Add a single package
-make install-package PACKAGE=requests
+npm run install-package requests
 
 # Add multiple packages at once
-make install-package PACKAGE="requests pandas numpy matplotlib"
+npm run install-package "requests pandas numpy matplotlib"
 
 # Add a specific version
-make install-package PACKAGE="django==4.2.0"
+npm run install-package "django==4.2.0"
 ```
 
 #### Method 2: Using Docker Compose Directly
@@ -101,15 +107,15 @@ docker-compose run --rm dev pip freeze > requirements.txt
    ```
 2. Rebuild the container:
    ```bash
-   make build
+   npm run build
    # OR
    docker-compose build
    ```
 
 ### Removing Libraries
 ```bash
-# Using Make
-make remove-package PACKAGE=requests
+# Using npm scripts
+npm run remove-package requests
 
 # Using Docker Compose directly
 docker-compose run --rm dev pip uninstall -y requests
@@ -119,7 +125,7 @@ docker-compose run --rm dev pip freeze > requirements.txt
 ### Viewing Installed Packages
 ```bash
 # See all installed packages
-make list-packages
+npm run list-packages
 
 # OR
 docker-compose run --rm dev pip list
@@ -127,19 +133,20 @@ docker-compose run --rm dev pip list
 
 ## 🛠️ Development Commands
 
-| Command               | Make         | Docker Compose                                  | Description                       |
-| --------------------- | ------------ | ----------------------------------------------- | --------------------------------- |
-| **Build**             | `make build` | `docker-compose build`                          | Build/rebuild the Docker image    |
-| **Run App**           | `make run`   | `docker-compose up app`                         | Start the Flask application       |
-| **Interactive Shell** | `make shell` | `docker-compose run --rm dev /bin/bash`         | Get a bash shell inside container |
-| **View Logs**         | `make logs`  | `docker-compose logs -f app`                    | View application logs             |
-| **Stop App**          | `Ctrl+C`     | `docker-compose down`                           | Stop the running application      |
-| **Clean Up**          | `make clean` | `docker-compose down && docker system prune -f` | Remove containers and cleanup     |
+| Command               | npm Scripts     | Docker Compose                                  | Description                       |
+| --------------------- | --------------- | ----------------------------------------------- | --------------------------------- |
+| **Build**             | `npm run build` | `docker-compose build`                          | Build/rebuild the Docker image    |
+| **Run App**           | `npm start`     | `docker-compose up app`                         | Start the Flask application       |
+| **Interactive Shell** | `npm run shell` | `docker-compose run --rm dev /bin/bash`         | Get a bash shell inside container |
+| **View Logs**         | `npm run logs`  | `docker-compose logs -f app`                    | View application logs             |
+| **Stop App**          | `Ctrl+C`        | `docker-compose down`                           | Stop the running application      |
+| **Clean Up**          | `npm run clean` | `docker-compose down && docker system prune -f` | Remove containers and cleanup     |
+| **Help**              | `npm run help`  | -                                               | Show all available commands       |
 
 ### 🖥️ Interactive Development Shell
 ```bash
 # Get inside the container for testing/debugging
-make shell
+npm run shell
 
 # Now you can run Python commands with all your dependencies:
 # python
@@ -153,9 +160,12 @@ make shell
 docker-app/
 ├── app.py                 # Your Flask application
 ├── requirements.txt       # Python dependencies
+├── package.json          # npm scripts and project metadata
+├── scripts/              # Helper scripts for npm commands
+│   ├── install-package.js # Script to install Python packages
+│   └── remove-package.js  # Script to remove Python packages
 ├── Dockerfile            # Docker image definition (uses python:3.11-slim base)
 ├── docker-compose.yml    # Multi-container setup
-├── Makefile             # Convenient commands
 ├── .dockerignore        # Files to ignore in Docker
 └── README.md           # This file
 ```
@@ -198,37 +208,37 @@ VERSION="12 (bookworm)"
 ### Starting a New Feature
 ```bash
 # 1. Make sure you have the latest image
-make build
+npm run build
 
 # 2. Need a new library? Add it
-make install-package PACKAGE=requests
+npm run install-package requests
 
 # 3. Start developing
-make run
+npm start
 
 # 4. Open another terminal for interactive testing
-make shell
+npm run shell
 ```
 
 ### Daily Development
 ```bash
 # 1. Start your app (auto-reloads on file changes)
-make run
+npm start
 
 # 2. Edit your Python files normally
 # 3. Changes are reflected immediately (volume mounting)
 # 4. View logs if needed
-make logs
+npm run logs
 ```
 
 ### Debugging
 ```bash
 # Get an interactive Python shell with all your packages
-make shell
+npm run shell
 python
 
 # Or run specific Python files
-make shell
+npm run shell
 python your_script.py
 ```
 
@@ -237,7 +247,7 @@ python your_script.py
 ### ✅ Clean Development Environment
 - **No Global Installs**: Python packages stay in Docker containers
 - **System Protection**: Your laptop's Python environment stays untouched
-- **Easy Cleanup**: Remove everything with `make clean`
+- **Easy Cleanup**: Remove everything with `npm run clean`
 
 ### ✅ Consistent Environment
 - **Same for Everyone**: Team members use identical environments
@@ -272,8 +282,26 @@ docker-compose build --no-cache
 ### Need to Reset Everything?
 ```bash
 # Nuclear option - removes everything and starts fresh
-make clean
-make build
+npm run clean
+npm run build
+```
+
+## 📋 Available npm Commands
+
+Run `npm run help` to see all available commands, or use these directly:
+
+```bash
+npm run build              # Build Docker image
+npm start                  # Run the application
+npm run dev                # Run in development mode
+npm run shell              # Interactive container shell
+npm run logs               # View application logs
+npm run clean              # Clean up containers and images
+npm run list-packages      # Show installed packages
+npm run install-requirements  # Install all requirements
+npm run install-package <package>  # Install a specific package
+npm run remove-package <package>   # Remove a specific package
+npm run help               # Show this help message
 ```
 
 ## 🚀 Advanced Usage

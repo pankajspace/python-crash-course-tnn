@@ -1,0 +1,30 @@
+{
+    "name": "docker-python-app",
+    "version": "1.0.0",
+    "description": "Flask Docker application with npm scripts for development",
+    "scripts": {
+        "build": "docker-compose build",
+        "start": "docker-compose up app",
+        "dev": "docker-compose up app",
+        "shell": "docker-compose run --rm dev /bin/bash",
+        "logs": "docker-compose logs -f app",
+        "clean": "docker-compose down && docker system prune -f",
+        "list-packages": "docker-compose run --rm dev pip list",
+        "install-requirements": "docker-compose run --rm dev pip install -r requirements.txt",
+        "install-package": "node scripts/install-package.js",
+        "remove-package": "node scripts/remove-package.js",
+        "help": "echo '\\nAvailable commands:' && echo '  npm run build                    - Build Docker image' && echo '  npm start                        - Run the application' && echo '  npm run dev                      - Run in development mode' && echo '  npm run shell                    - Interactive container shell' && echo '  npm run logs                     - View application logs' && echo '  npm run clean                    - Clean up containers and images' && echo '  npm run list-packages            - Show installed packages' && echo '  npm run install-requirements     - Install all requirements' && echo '  npm run install-package <pkg>    - Install a package' && echo '  npm run remove-package <pkg>     - Remove a package' && echo ''"
+    },
+    "keywords": [
+        "docker",
+        "python",
+        "flask",
+        "development"
+    ],
+    "author": "",
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=6.0.0"
+    }
+}
