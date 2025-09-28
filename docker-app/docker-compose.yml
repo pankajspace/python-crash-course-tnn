@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    command: python app.py
+
+  # Development service for installing packages
+  dev:
+    build: .
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    working_dir: /app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
