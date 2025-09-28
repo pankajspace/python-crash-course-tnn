@@ -119,94 +119,94 @@
 # print(z) # shows 7.0
 # print(type(z)) # shows <class 'float'>
 
-# explicit conversion
-input_integer = 10 # integer
-input_float = 3.14 # float
-input_string = "42" # string
-input_string2 = "3.14" # string
-input_string3 = "Hello" # string
-input_integer2 = int(input_string) # explicit conversion from string to integer
-input_float2 = float(input_string2) # explicit conversion from string to float
-print(input_integer2) # shows 42
-print(input_float2) # shows 3.14
-print(type(input_integer2)) # shows <class 'int'>
-print(type(input_float2)) # shows <class 'float'>
+# # explicit conversion
+# input_integer = 10 # integer
+# input_float = 3.14 # float
+# input_string = "42" # string
+# input_string2 = "3.14" # string
+# input_string3 = "Hello" # string
+# input_integer2 = int(input_string) # explicit conversion from string to integer
+# input_float2 = float(input_string2) # explicit conversion from string to float
+# print(input_integer2) # shows 42
+# print(input_float2) # shows 3.14
+# print(type(input_integer2)) # shows <class 'int'>
+# print(type(input_float2)) # shows <class 'float'>
 
-# converting float to int (truncates decimal part)
-input_integer3 = int(input_float) # explicit conversion from float to integer
-print(input_integer3) # shows 3
-print(type(input_integer3)) # shows <class 'int'>
+# # converting float to int (truncates decimal part)
+# input_integer3 = int(input_float) # explicit conversion from float to integer
+# print(input_integer3) # shows 3
+# print(type(input_integer3)) # shows <class 'int'>
 
-# converting int to float
-input_float3 = float(input_integer) # explicit conversion from integer to float
-print(input_float3) # shows 10.0
-print(type(input_float3)) # shows <class 'float'>
+# # converting int to float
+# input_float3 = float(input_integer) # explicit conversion from integer to float
+# print(input_float3) # shows 10.0
+# print(type(input_float3)) # shows <class 'float'>
 
-# converting int to string
-input_string4 = str(input_integer) # explicit conversion from integer to string
-print(input_string4) # shows "10"
-print(type(input_string4)) # shows <class 'str'>
+# # converting int to string
+# input_string4 = str(input_integer) # explicit conversion from integer to string
+# print(input_string4) # shows "10"
+# print(type(input_string4)) # shows <class 'str'>
 
-# converting float to string
-input_string5 = str(input_float) # explicit conversion from float to string
-print(input_string5) # shows "3.14"
-print(type(input_string5)) # shows <class 'str'>
+# # converting float to string
+# input_string5 = str(input_float) # explicit conversion from float to string
+# print(input_string5) # shows "3.14"
+# print(type(input_string5)) # shows <class 'str'>
 
-# converting boolean to int
-input_integer4 = int(True) # True becomes 1
-input_integer5 = int(False) # False becomes 0
-print(input_integer4) # shows 1
-print(input_integer5) # shows 0
-print(type(input_integer4)) # shows <class 'int'>
-print(type(input_integer5)) # shows <class 'int'>
+# # converting boolean to int
+# input_integer4 = int(True) # True becomes 1
+# input_integer5 = int(False) # False becomes 0
+# print(input_integer4) # shows 1
+# print(input_integer5) # shows 0
+# print(type(input_integer4)) # shows <class 'int'>
+# print(type(input_integer5)) # shows <class 'int'>
 
-# converting boolean to float
-input_float4 = float(True) # True becomes 1.0
-input_float5 = float(False) # False becomes 0.0
-print(input_float4) # shows 1.0
-print(input_float5) # shows 0.0
-print(type(input_float4)) # shows <class 'float'>
-print(type(input_float5)) # shows <class 'float'>
+# # converting boolean to float
+# input_float4 = float(True) # True becomes 1.0
+# input_float5 = float(False) # False becomes 0.0
+# print(input_float4) # shows 1.0
+# print(input_float5) # shows 0.0
+# print(type(input_float4)) # shows <class 'float'>
+# print(type(input_float5)) # shows <class 'float'>
 
-# converting boolean to string
-input_string6 = str(True) # True becomes "True"
-input_string7 = str(False) # False becomes "False"
-print(input_string6) # shows "True"
-print(input_string7) # shows "False"
-print(type(input_string6)) # shows <class 'str'>
-print(type(input_string7)) # shows <class 'str'>
+# # converting boolean to string
+# input_string6 = str(True) # True becomes "True"
+# input_string7 = str(False) # False becomes "False"
+# print(input_string6) # shows "True"
+# print(input_string7) # shows "False"
+# print(type(input_string6)) # shows <class 'str'>
+# print(type(input_string7)) # shows <class 'str'>
 
-# converting string to boolean
-input_boolean1 = bool("Hello") # non-empty string becomes True
-input_boolean2 = bool("") # empty string becomes False
-print(input_boolean1) # shows True
-print(input_boolean2) # shows False
-print(type(input_boolean1)) # shows <class 'bool'>
-print(type(input_boolean2)) # shows <class 'bool'>
+# # converting string to boolean
+# input_boolean1 = bool("Hello") # non-empty string becomes True
+# input_boolean2 = bool("") # empty string becomes False
+# print(input_boolean1) # shows True
+# print(input_boolean2) # shows False
+# print(type(input_boolean1)) # shows <class 'bool'>
+# print(type(input_boolean2)) # shows <class 'bool'>
 
-# converting int to boolean
-input_boolean3 = bool(1) # non-zero integer becomes True
-input_boolean4 = bool(0) # zero becomes False
-print(input_boolean3) # shows True
-print(input_boolean4) # shows False
-print(type(input_boolean3)) # shows <class 'bool'>
-print(type(input_boolean4)) # shows <class 'bool'>
+# # converting int to boolean
+# input_boolean3 = bool(1) # non-zero integer becomes True
+# input_boolean4 = bool(0) # zero becomes False
+# print(input_boolean3) # shows True
+# print(input_boolean4) # shows False
+# print(type(input_boolean3)) # shows <class 'bool'>
+# print(type(input_boolean4)) # shows <class 'bool'>
 
-# converting float to boolean
-input_boolean5 = bool(0.1) # non-zero float becomes True
-input_boolean6 = bool(0.0) # zero becomes False
-print(input_boolean5) # shows True
-print(input_boolean6) # shows False
-print(type(input_boolean5)) # shows <class 'bool'>
-print(type(input_boolean6)) # shows <class 'bool'>
+# # converting float to boolean
+# input_boolean5 = bool(0.1) # non-zero float becomes True
+# input_boolean6 = bool(0.0) # zero becomes False
+# print(input_boolean5) # shows True
+# print(input_boolean6) # shows False
+# print(type(input_boolean5)) # shows <class 'bool'>
+# print(type(input_boolean6)) # shows <class 'bool'>
 
-# invalid conversions (uncommenting these will cause errors)
-# input_integer6 = int("Hello") # cannot convert non-numeric string to int
-# input_float7 = float("World") # cannot convert non-numeric string to float
-# input_integer7 = int("3.14") # cannot convert float string directly to int
-# print(input_integer6)
-# print(input_float7)
-# print(input_integer7)
+# # invalid conversions (uncommenting these will cause errors)
+# # input_integer6 = int("Hello") # cannot convert non-numeric string to int
+# # input_float7 = float("World") # cannot convert non-numeric string to float
+# # input_integer7 = int("3.14") # cannot convert float string directly to int
+# # print(input_integer6)
+# # print(input_float7)
+# # print(input_integer7)
 
 # input from user
 name = input("Enter your name: ") # input is always a string
